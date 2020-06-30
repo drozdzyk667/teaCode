@@ -20,7 +20,7 @@ Features:
 There are 2 easy ways to view my project:
 
 - 1. Download ZIP package, unpack it somewhere on your PC, open project in your code editor and run yarn install, then yarn start.
-- 2. Use repo reference link, to clone repository. Open project, run git clone command, subsequently that yarn install and yarn start
+- 2. Use repo reference link, to clone repository. Open project, run git clone command, subsequently yarn install and yarn start
 
 ## Contact
 
