@@ -43,13 +43,16 @@ const ContactListContainer = ({ response }) => {
     setFilterValue(event.target.value);
   };
 
-  const handleCheckContact = (id: string) => {
-    setMatchedData(
-      matchedData.map(item =>
-        item.id === id ? { ...item, isChecked: !item.isChecked } : item
-      )
-    );
-  };
+  const handleCheckContact = React.useCallback(
+    (id: string) => {
+      setMatchedData(
+        matchedData.map(item =>
+          item.id === id ? { ...item, isChecked: !item.isChecked } : item
+        )
+      );
+    },
+    [matchedData]
+  );
 
   React.useEffect(() => {
     if (checkedContacts.length) {
@@ -69,7 +72,12 @@ const ContactListContainer = ({ response }) => {
   return (
     <Box className={classes.root}>
       <Search handleFilterInput={handleFilterInput} />
-      <ContactList {...contactsProps} />
+      {React.useMemo(
+        () => (
+          <ContactList {...contactsProps} />
+        ),
+        [contactsProps]
+      )}
     </Box>
   );
 };

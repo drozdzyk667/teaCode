@@ -41,8 +41,7 @@ const ContactList: React.FC<ContactListProps> = ({
 }) => {
   const classes = useStyles();
 
-  const showButton = matchedData.length !== NO_DATA_LENGTH;
-  const hideButton = matchedData.length === NO_DATA_LENGTH;
+  const isButtonHidden = matchedData.length === NO_DATA_LENGTH;
 
   return (
     <>
@@ -63,10 +62,10 @@ const ContactList: React.FC<ContactListProps> = ({
           page={currentPage}
           defaultPage={FIRST_PAGE}
           onChange={jumpToPage}
-          showFirstButton={showButton}
-          showLastButton={showButton}
-          hideNextButton={hideButton}
-          hidePrevButton={hideButton}
+          showFirstButton={!isButtonHidden}
+          showLastButton={!isButtonHidden}
+          hideNextButton={isButtonHidden}
+          hidePrevButton={isButtonHidden}
         />
       </Box>
     </>
