@@ -3,11 +3,7 @@ import './App.css';
 import Contacts from './pages/contacts/Contacts';
 
 const App = () => {
-  return (
-    <React.Fragment>
-      <Contacts />
-    </React.Fragment>
-  );
+  return <Contacts />;
 };
 
 export default App;
